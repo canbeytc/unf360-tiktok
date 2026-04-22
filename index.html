@@ -16,17 +16,15 @@
 <body>
     <div class="container">
         <h1>TikTok Unfollowers</h1>
-        <div class="code-box" id="codeArea">Kod yüklenemedi.</div>
-        <button class="btn" onclick="copyCode()">📋 Kodu Kopyala</button>
-        <p style="color: #888; margin-top: 20px;">Kodu kopyalayıp TikTok sekmesinde konsola yapıştırın.</p>
+        <div class="code-box" id="codeArea">Kod Buraya Gelecek...</div>
+        <button class="btn" onclick="copyCode()">📋 Kopyala</button>
     </div>
 
     <script>
-        // --- BURADAN SONRASINA DİKKAT ---
+        // --- BURAYA DİKKAT ---
+        // Sadece aşağıdaki "const myScript =" satırının içine kodunu yapıştıracağız.
         
-        const myScript = `
-
-        (async function () {
+        const myScript = String.raw`(async function () {
   'use strict';
 
   const STORAGE_KEY = 'tu_master_v33';
@@ -528,21 +526,15 @@
   })();
 
   render();
-})();
-
-        `;
+})();`;
 
         // --- BURADAN AŞAĞISINA DOKUNMA ---
-
         window.onload = function() {
-            document.getElementById('codeArea').innerText = myScript.trim();
+            document.getElementById('codeArea').innerText = myScript;
         };
-
         function copyCode() {
             const code = document.getElementById('codeArea').innerText;
-            navigator.clipboard.writeText(code).then(() => {
-                alert("Kod kopyalandı!");
-            });
+            navigator.clipboard.writeText(code).then(() => { alert("Kod kopyalandı!"); });
         }
     </script>
 </body>
